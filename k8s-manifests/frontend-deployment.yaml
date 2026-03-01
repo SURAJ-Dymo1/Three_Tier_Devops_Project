@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: three-tier-app-frontend
-        image: surajmane121045/three_tier_app_frontend:1.3
+        image: surajmane121045/three_tier_app_frontend:87173d7434a53e47af0db4f430a6598e68e690f8
         ports:
         - containerPort: 80
