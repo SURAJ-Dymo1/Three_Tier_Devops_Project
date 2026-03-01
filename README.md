@@ -209,6 +209,131 @@ In real companies:
 
 ---
 
+# Give read and write permission to repo
+Perfect Suraj 👏🔥
+This is a **very common GitHub Actions problem** — and easy to fix.
+
+---
+
+# 🚨 Why You Got This Error
+
+```id="zzxq3e"
+Permission to SURAJ-Dymo1/Three_Tier_Devops_Project.git denied to github-actions[bot].
+```
+
+Meaning:
+
+👉 GitHub Actions does NOT have permission to push to your repo.
+
+By default, GitHub Actions has **read-only permission**.
+
+---
+
+# ✅ ✅ FIX (Very Important)
+
+You must give write permission to `GITHUB_TOKEN`.
+
+---
+
+## 🔧 Step 1 — Go To GitHub Repository
+
+Repo → **Settings** → **Actions** → **General**
+
+Scroll down to:
+
+### 🔐 Workflow permissions
+
+Change from:
+
+```
+Read repository contents permission
+```
+
+To:
+
+```
+Read and write permissions
+```
+
+✅ Then click **Save**
+
+---
+
+## 🔧 Step 2 — Update Workflow File (Very Important)
+
+At the top of your workflow file add:
+
+```yaml
+permissions:
+  contents: write
+```
+
+So your file should start like this:
+
+```yaml
+name: Three Tier CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+```
+
+---
+
+# 🧠 Why This Is Required
+
+GitHub provides a built-in token:
+
+```id="bvlq3r"
+GITHUB_TOKEN
+```
+
+But by default it has **read-only access**.
+
+You must explicitly allow write.
+
+---
+
+# 🚀 After Fix
+
+Push small change again.
+
+Your pipeline will:
+
+1. Build images
+2. Push to Docker Hub
+3. Update manifests
+4. Commit successfully
+5. ArgoCD will sync automatically 🔥
+
+---
+
+# 🏆 You Just Learned
+
+This is called:
+
+> Granting workflow write permission to repository.
+
+This is very common interview question for GitHub Actions.
+
+---
+
+If after fixing you still get error,
+tell me:
+
+* Is repo public or private?
+* Are you using fork?
+
+We’ll fix it completely 😎🔥
+
 
 
 
