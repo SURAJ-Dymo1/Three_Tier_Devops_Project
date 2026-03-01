@@ -1,3 +1,8 @@
+“I built a three-tier application with GitHub Actions CI pipeline.
+Images are pushed to Docker Hub.
+Kubernetes manifests are updated automatically.
+ArgoCD watches the repo and auto-syncs cluster.”
+
 # Three_Tier_Devops_Project
 Practice Project
 

@@ -73,7 +73,7 @@ function Todo() {
 
   return (
     <div style={styles.container}>
-      <h2>Todo App Hey Ram Siya laxman and Hanuman</h2>
+      <h2>Todo App</h2>
 
       <form onSubmit={handleSubmit} style={styles.form}>
         <input
