@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: three-tier-app-mongo
-        image: surajmane121045/three_tier_app_mongodb:ffb61c71e2c102331af734603a5039aa74268420
+        image: surajmane121045/three_tier_app_mongodb:dbcff1ae4cc3ad407bbe3ebefa229c76361c71a8
         ports:
         - containerPort: 27017
         volumeMounts:

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: three-tier-app-backend
-        image: surajmane121045/three_tier_app_backend:ffb61c71e2c102331af734603a5039aa74268420
+        image: surajmane121045/three_tier_app_backend:dbcff1ae4cc3ad407bbe3ebefa229c76361c71a8
         ports:
         - containerPort: 8080
         env:
