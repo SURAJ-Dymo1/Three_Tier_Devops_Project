@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: three-tier-app-mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: three-tier-app-mongo
+  template:
+    metadata:
+      labels:
+        app: three-tier-app-mongo
+    spec:
+      containers:
+      - name: three-tier-app-mongo
+        image: surajmane121045/three_tier_app_mongodb:1.1
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: mongo-storage
+          mountPath: /data/db
+      volumes:
+      - name: mongo-storage
+        emptyDir: {}
+
+
+# kubectl describe pod -l app=mongo

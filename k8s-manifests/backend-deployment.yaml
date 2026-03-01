@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: three-tier-app-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: three-tier-app-backend
+  template:
+    metadata:
+      labels:
+        app: three-tier-app-backend
+    spec:
+      containers:
+      - name: three-tier-app-backend
+        image: surajmane121045/three_tier_app_backend:1.4 
+        ports:
+        - containerPort: 8080
+        env:
+          - name: MONGO_URL
+            value: "mongodb://three-tier-app-mongo:27017"

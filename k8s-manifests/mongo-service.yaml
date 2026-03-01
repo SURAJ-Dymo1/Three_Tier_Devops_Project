@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: three-tier-app-mongo
+spec:
+  selector:
+    app: three-tier-app-mongo
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017

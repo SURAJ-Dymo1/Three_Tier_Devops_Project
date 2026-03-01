@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: three-tier-app-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: three-tier-app-frontend
+  template:
+    metadata:
+      labels:
+        app: three-tier-app-frontend
+    spec:
+      containers:
+      - name: three-tier-app-frontend
+        image: surajmane121045/three_tier_app_frontend:1.3
+        ports:
+        - containerPort: 80
